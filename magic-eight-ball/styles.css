@@ -8,9 +8,14 @@ html {
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 main {
     background-color: rgb(65, 65, 31);
     width: 80%;
-    margin: 0 auto;
+    height: 80vh;
+    text-align: center;
 }
