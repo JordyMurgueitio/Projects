@@ -1,3 +1,12 @@
+    let button = document.getElementById("trigger");
+
+    function answer(){
+        document.getElementById("answer-para").innerHTML = "Hola"
+        document.getElementsByTagName("input").innerHTML = "";
+    }
+    button.addEventListener(click, answer());
+    
+    
     let userName = "erik";  // create variable for username
 
     userName ? console.log(`Hello, ${userName} !`)  // Greeting for username 
