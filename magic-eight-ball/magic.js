@@ -1,3 +1,5 @@
+    
+    /* This is some test to make it work on the browser */
     let button = document.getElementById("trigger");
 
     function answer(){
@@ -6,7 +8,7 @@
     }
     button.addEventListener(click, answer());
     
-    
+    /* From here starts the logic */
     let userName = "erik";  // create variable for username
 
     userName ? console.log(`Hello, ${userName} !`)  // Greeting for username 
