@@ -23,3 +23,18 @@ Number.isInteger(2030); //Number object with isInteger method
 console.log(Number.isInteger(120)); //prints true
 
 
+// VARIABLES - store information 
+
+//var - can be reassigned - can be undefinded
+var myName = ""; 
+myName = "Juan"
+console.log(myName);
+
+//let - can be reassigned - can be undefinded
+let meal = "pizza"; 
+meal = "burger"
+console.log(meal);
+
+//const - can't be reassigned - must have a value
+const age = 50;
+console.log(age);
