@@ -23,7 +23,9 @@ Number.isInteger(2030); //Number object with isInteger method
 console.log(Number.isInteger(120)); //prints true
 
 
+
 // VARIABLES - store information 
+
 
 //var - can be reassigned - can be undefinded
 var myName = ""; 
@@ -83,6 +85,34 @@ let newVariable = 'Playing around with typeof';
 console.log(typeof newVariable); //prints string
 newVariable = 1;
 console.log(typeof newVariable); //prints number 
+
+
+
+//KELVIN-WEATHER PROJECT - transform from kelvin to fahrenheit
+
+const kelvin = 293; //kelvin temperature for today 
+let celsius = kelvin - 273; //transfrom kelvin to celsius 
+let fahrenheit = Math.floor(celsius * (9/5) + 32); //transform celsius to fahrenheit 
+
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit`);
+
+
+
+//DOG YEARS PROJECT - calculate my age in dog years 
+
+let myAge = 24; //saving my age
+let earlyYears = 2; 
+earlyYears *= 10.5; //first 2 years count as 10.5 dog years each. 
+
+let laterYears = myAge - 2;  
+laterYears *= 4; //Each year following equates to 4 dog years
+
+let myAgeInDogYears = earlyYears + laterYears;
+
+console.log(`My name is Jordy. I'm ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years`);
+
+
+
 
 
 
