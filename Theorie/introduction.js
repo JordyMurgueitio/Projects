@@ -42,7 +42,7 @@ console.log(age);
 //Mathematical assignment operators 
 let a = 8;
 a += 2; // Can be written as a = a + 2
-console.log(x); // Output: 10
+console.log(a); // Output: 10
 
 let x = 20;
 x -= 5; // Can be written as x = x - 5
@@ -64,3 +64,25 @@ console.log(tios); //Prints 6
 let abuelos = 4; 
 abuelos--; 
 console.log(abuelos); //prints 3
+
+//String concatenation with variables 
+
+let favoriteAnimal = "lion";
+console.log("My favorite animal: " + favoriteAnimal); //prints My favorite animal: lion
+
+//String interpolation - We use template literals (``) 
+
+let user = "jordy";
+let myCity = "Quito";
+console.log(`My name is ${user} and I live in ${myCity}`);
+
+//typeof operator - check data type of a variable's value
+
+let newVariable = 'Playing around with typeof';
+
+console.log(typeof newVariable); //prints string
+newVariable = 1;
+console.log(typeof newVariable); //prints number 
+
+
+
