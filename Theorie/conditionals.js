@@ -66,5 +66,30 @@ let sleepy = false;
 console.log(!sleepy); // Prints true
 
 
-// Truthy and Falsy assignment 
+// Truthy and Falsy assignment -- Checks if the var is defined and assigns a value if not
+
+let userName = "";
+let defaultName = userName || "Stranger";
+
+console.log(`Hi ${defaultName}, have a good day`); 
+
+
+// Ternary Operator  -- short syntax for if else, used for conditions that evaluate to true or false
+
+let angry = true; 
+angry ? console.log("relax")
+: console.log("Good man");
+
+let favoriteSport = "football";
+favoriteSport === "football" ? console.log("What a sport")
+: console.log("Not a good sport");
+
+let dark = true; 
+let scared = false;
+dark && scared ? console.log("run")
+: console.log("its ok");
+
+
+// Else if statements
+
 
