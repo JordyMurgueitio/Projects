@@ -1,13 +1,15 @@
     
     /* This is some test to make it work on the browser */
-    let button = document.getElementById("trigger");
+/*     let button = document.getElementById("trigger");
 
     function answer(){
         document.getElementById("answer-para").innerHTML = "Hola"
         document.getElementsByTagName("input").innerHTML = "";
     }
-    button.addEventListener(click, answer());
+    button.addEventListener(click, answer()); */
     
+
+
     /* From here starts the logic */
     let userName = "erik";  // create variable for username
 
@@ -50,6 +52,8 @@
     break;
     }
 
-    console.log(eightBall);  // logs the value of eightBall. It will be a new answer everytime. 
+    console.log(eightBall);   // logs the value of eightBall. It will be a new answer everytime. 
+
+
 
 
