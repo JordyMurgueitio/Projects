@@ -90,6 +90,41 @@ dark && scared ? console.log("run")
 : console.log("its ok");
 
 
-// Else if statements
+// Else if statements - allow you to have multiple possible outcomes
+
+let energyLevel = 10;
+
+if (energyLevel <= 2) {
+    console.log("rest");
+} else if (energyLevel <= 6) {
+    console.log("resist")
+} else if (energyLevel <= 10 ) {
+    console.log("Go do something")
+} else {
+    console.log("energy level unknown, who are you?")
+}
+
+// The switch keyword - alternative syntax to the else if statement 
+
+let arrivedFrom = "Argentina";
+
+switch (arrivedFrom) {     
+    case "England" :
+    console.log("Welcome");
+    break; 
+
+    case "Argentina" :
+    console.log("Bienvenido");
+    break;
+
+    case "Germany" : 
+    console.log("Willkommen");
+    break;
+    
+    default :
+    console.log("Unknown place")
+}
+
+
 
 
