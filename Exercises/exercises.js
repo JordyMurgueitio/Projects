@@ -1,4 +1,5 @@
 // Function finds the largest of 3 given numbers 
+
 function largestNumber(num1, num2, num3) {
     if (num1 > num2 && num1 > num3) {
         console.log(`The largest number is ${num1}`);
@@ -10,3 +11,17 @@ function largestNumber(num1, num2, num3) {
 }
 
 largestNumber (600, 50, 97);
+
+
+// Function prints the result after evaluating arithmetic operations between two numbers
+
+function evalNumber (num1, num2, op) {
+    if (op == "add"){
+        console.log(`The result of adding ${num1} and ${num2} is ${num1 + num2}`);
+    } else if (op == "multiply") {
+        console.log(`The result of multiplying ${num1} and ${num2} is ${num1 * num2}`);
+    }
+}
+
+evalNumber(40, 40, "add");
+evalNumber(10, 2, "multiply");
