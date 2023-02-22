@@ -25,3 +25,18 @@ function evalNumber (num1, num2, op) {
 
 evalNumber(40, 40, "add");
 evalNumber(10, 2, "multiply");
+
+
+// Function calculates calories needed based on weight and being active or not
+
+function countCalories(weight, active) {
+    if (weight >= 60 && active == true) {
+        console.log("You need 3000 calories");
+    } else if (weight < 60 && active == true) {
+        console.log("You need 2500 calories");
+    } else {
+        console.log("You need 2000 calories");
+    }
+}
+
+countCalories(60, true);
