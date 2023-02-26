@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 5px 2px rgb(166, 168, 168);
+}
+header .title {
+  background-color: rgb(91, 123, 150);
+}
+header nav {
+  background-color: aqua;
+  display: flex;
+  width: 40%;
+  min-width: 300px;
+}
+header nav .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  background-color: rgb(19, 19, 46);
+  width: 100%;
+}
+header nav .nav-bar .nav-item {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
