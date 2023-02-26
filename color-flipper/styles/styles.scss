@@ -13,23 +13,59 @@ header {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 5px 2px rgb(166, 168, 168);
     .title {
-        background-color: rgb(91, 123, 150);
+        background-color: rgb(255, 255, 255);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(42, 44, 70);
+        margin-left: 10px;
     }
     nav {
-        background-color: aqua;
+        background-color: rgb(255, 255, 255);
         display: flex;
-        width: 40%;
-        min-width: 300px;
+        width: 50%;
         .nav-bar {
             display: flex; 
             align-items: center;
             justify-content: space-evenly;
             padding: 0;
-            background-color: rgb(19, 19, 46);
+            background-color: rgb(255, 255, 255);
             width: 100%;
             .nav-item {
                 list-style-type: none;
+                .nav-link {
+                    color: black;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                }
+                .nav-link:hover {
+                    background-color: rgb(107, 97, 37);
+                    color: #ffffff;
+                }
             }
+        }
+    }
+}
+
+section {
+    .container {
+        padding: 100px 0;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        h2 {
+            background-color: black;
+            color: #ffffff;
+            font-size: 2.5em;
+            padding: 5%;
+            border-radius: 20px;
+            .color {
+                color: #ffffff;
+
+            }
+        }
+        button {
+            padding: 1%;
+            font-size: 1.2em;
         }
     }
 }
