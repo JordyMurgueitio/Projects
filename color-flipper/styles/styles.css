@@ -5,7 +5,7 @@
 body {
   margin: 0;
   height: 100%;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
 }
 
 header {
@@ -73,16 +73,22 @@ section .container h2 {
 section .container h2 .color {
   color: #18848b;
 }
+@media only screen and (max-width: 600px) {
+  section .container h2 {
+    font-size: 2em;
+  }
+}
 section .container button {
-  padding: 1%;
+  padding: 5px 20px;
   font-size: 1.2em;
   border-radius: 2px;
-  background-color: rgba(247, 235, 235, 0.1);
+  background-color: rgba(255, 255, 255, 0);
   color: #000000;
 }
 section .container button:hover {
   background-color: #000000;
   color: #ffffff;
+  border: 2px solid #206281;
 }
 
 /*# sourceMappingURL=styles.css.map */
