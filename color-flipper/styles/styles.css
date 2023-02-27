@@ -47,6 +47,9 @@ header nav .nav-bar .nav-item .nav-link:hover {
   background-color: rgb(255, 255, 255);
   color: #206281;
 }
+header nav .nav-bar .nav-item .active {
+  color: #18848b;
+}
 
 section {
   height: 100%;
