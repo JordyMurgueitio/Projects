@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   background-color: #ffffff;
 }
 
@@ -13,7 +13,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
-  box-shadow: 1px 5px 2px rgb(166, 168, 168);
+  box-shadow: 1px 5px 5px lightgray;
 }
 header .title {
   background-color: rgb(255, 255, 255);
@@ -38,18 +38,23 @@ header nav .nav-bar .nav-item {
   list-style-type: none;
 }
 header nav .nav-bar .nav-item .nav-link {
-  color: black;
+  color: rgb(16, 9, 51);
+  font-weight: 600;
   text-decoration: none;
   font-size: 1.5rem;
 }
 header nav .nav-bar .nav-item .nav-link:hover {
-  background-color: rgb(107, 97, 37);
-  color: #ffffff;
+  background-color: rgb(255, 255, 255);
+  color: #206281;
 }
 
+section {
+  height: 100%;
+}
 section .container {
   padding: 100px 0;
-  width: 100%;
+  width: 90%;
+  min-width: 440px;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -60,13 +65,21 @@ section .container h2 {
   font-size: 2.5em;
   padding: 5%;
   border-radius: 20px;
+  font-family: Geneva, Verdana, sans-serif;
 }
 section .container h2 .color {
-  color: #ffffff;
+  color: #18848b;
 }
 section .container button {
   padding: 1%;
   font-size: 1.2em;
+  border-radius: 2px;
+  background-color: rgba(247, 235, 235, 0.1);
+  color: #000000;
+}
+section .container button:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=styles.css.map */
