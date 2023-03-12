@@ -115,4 +115,111 @@ function sumUp_first_half_array(array){
     }
     return total
 }
-//alert(sumUp_first_half_array([54, 32, 21, 675, 3]));
+// alert(sumUp_first_half_array([54, 32, 21, 675, 3]));
+
+function sumUp_second_half_array(array){
+    let total = 0
+    for (let i=Math.floor(array.length/2); i < array.length; i++) {
+        total += array[i];
+    }
+    return total
+}
+// alert(sumUp_second_half_array([54, 32, 21, 675, 3]));
+
+
+
+//  vas a crear una function que va contar cuantos 5 hay en un "array"                                  
+// [54, 32, 21, 675, 3] ---> 0                          
+// [54, 32, 5, 5, 21, 675, 3] ---> 2  
+
+function myFunction (array) {
+    let countOfFives = 0;
+    for (let i= 0; i < array.length; i++) {
+        if (array[i] === 5) {
+            countOfFives += 1;
+        }
+    }
+    return countOfFives;
+}
+
+// alert(myFunction([5, 34, 3, 5, 3]))
+
+
+
+
+// ["Jordy", "Salah","tarek","Mhedi"]
+// Jordy;Salah;Tarek;Mehdi
+function array_to_csv (array) {
+    let string = "";
+    for (let i = 0; i < array.length; i++) {
+        string += array[i] + ";";
+    }
+    return string;
+}
+
+// alert(array_to_csv(["Jordy", "Salah", "Messi"]));
+
+
+
+
+const add_array_numbers = (array1, array2) => {
+    return array1[0] + array1[array1.length - 1] + array2[0] + array2[array2.length - 1];
+}
+
+alert (add_array_numbers([10, 4, 4], [1, 60, 3]));
+
+
+
+
+function biggerArray_to_csv (array1, array2) {
+
+    if (sumUp_array(array1) > sumUp_array(array2)) {
+        return array_to_csv(array1)
+    }else{
+        return array_to_csv(array2)
+    }
+}
+
+alert(biggerArray_to_csv([10, 4, 4], [1, 60, 3]));
+
+
+// 2 ---> 0
+// 3 ---> 0
+
+// [43, 3, 65, 21 , 2 , 65, 2, 8]
+// [43, 0, 65, 21 , 0 , 65, 0, 8]
+
+function transformArray (array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 2 || array[i] === 3 ) {
+            array[i] = 0
+        }
+    }
+    return array
+}
+//a = 21
+// alert(transformArray([43, 3, 65, 21 , 2 , 65, 2, 8]))
+//[8, 3, 65, 21 , 2 , 65, 2, 43]
+function swapArray (array) {
+    let first = array[0]; 
+    let last = array[array.length - 1];
+    array[0] = last;
+    array[array.length -1] = first;
+    return array;
+}
+
+alert(swapArray([8, 3, 65, 21 , 2 , 65, 2, 43]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
