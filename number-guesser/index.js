@@ -26,3 +26,8 @@ function updateScore (winner) {
         computerScore += 1;
     }
 }
+
+function advanceRound () {
+    currentRoundNumber += 1;
+}
+
