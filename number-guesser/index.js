@@ -2,10 +2,12 @@ let humanScore = 0;
 let computerScore = 0;
 let currentRoundNumber = 1; 
 
+// function generates the target number
 function generateTarget () {
     let target = Math.floor(Math.random() * 10);
     return target;
 }
+
 
 function compareGuesses(humnan, computer, target) {
     let humnanGuess = Math.abs(humnan - target);
