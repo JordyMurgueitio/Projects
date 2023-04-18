@@ -60,6 +60,9 @@ function odd_eve (number){
         return `the number ${number} is even`;
     }
 }
+
+// console.log(odd_even(3))
+
 let str ="";
 str += "hey Jordy";
 str +="\nhey Salah\n";
@@ -82,6 +85,7 @@ function first_last(my_array){
 
 
 // Function adds all the elements of an array
+// [54, 32, 21, 675, 3]
 function sumUp_array(array){
     let total = 0;
     for (let i=0; i < array.length; i++) {
@@ -110,6 +114,8 @@ function sumUp_array_neg(array) {
 // Function adds only the half of elements of the array
 function sumUp_first_half_array(array){
     let total = 0
+   
+
     for (let i=0; i < array.length/2; i++) {
         total += array[i];
     }
@@ -132,11 +138,12 @@ function sumUp_second_half_array(array){
 // [54, 32, 21, 675, 3] ---> 0                          
 // [54, 32, 5, 5, 21, 675, 3] ---> 2  
 
-function myFunction (array) {
+function myFunction_count_5 (array) {
     let countOfFives = 0;
     for (let i= 0; i < array.length; i++) {
         if (array[i] === 5) {
-            countOfFives += 1;
+            // countOfFives += 1;
+            countOfFives ++;
         }
     }
     return countOfFives;
@@ -166,27 +173,58 @@ const add_array_numbers = (array1, array2) => {
     return array1[0] + array1[array1.length - 1] + array2[0] + array2[array2.length - 1];
 }
 
-alert (add_array_numbers([10, 4, 4], [1, 60, 3]));
+// alert (add_array_numbers([10, 4, 4], [1, 60, 3]));
 
 
 
-
-function biggerArray_to_csv (array1, array2) {
-
-    if (sumUp_array(array1) > sumUp_array(array2)) {
-        return array_to_csv(array1)
-    }else{
+const compareArrays = (array1, array2) => {
+    let array1_sum = sumUp_array(array1);
+    let array2_sum = sumUp_array(array2);
+    
+    if (array1_sum > array2_sum) {
+        return array_to_csv(array1);
+    } else {
         return array_to_csv(array2)
     }
 }
 
-alert(biggerArray_to_csv([10, 4, 4], [1, 60, 3]));
-
-
+// alert(compareArrays([2,5,5], [10, 5]));
+// [2,5,9, 43, 8] -->[8,5,5, 43, 2] 
 // 2 ---> 0
 // 3 ---> 0
 
-// [43, 3, 65, 21 , 2 , 65, 2, 8]
+// [2,5, 2, 3 , 9, 43, 8, 2, 3 , 5,9, 43, 8]
+// [2,5,9, 43, 8] --> [5,9,43, 8, 8] 
+
+function shiftLeft (array) {
+    let firstElement = array[0];
+    for (let i = 0; i < array.length-1; i++){
+        array[i] = array[i +1];
+    }
+    array[array.length-1] = firstElement
+}
+
+function pattern (array) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 2 && array[i + 1] === 3 ) {
+            count ++;
+        }
+    }
+    return count
+}
+
+
+function switchArray (array) {
+    let firstElement = array[0];
+    array[0] = array[array.length - 1]
+    array[array.length -1 ] = firstElement;
+    return array
+}
+alert(switchArray([10, 10, 2, 6]));
+
+
+// [43, 3, 65, 21 , 2 , 65, 2, 8] ---> 43;3;65;21;2;65;2;8
 // [43, 0, 65, 21 , 0 , 65, 0, 8]
 
 function transformArray (array) {
@@ -209,6 +247,8 @@ function swapArray (array) {
 }
 
 alert(swapArray([8, 3, 65, 21 , 2 , 65, 2, 43]));
+
+
 
 
 
