@@ -11,7 +11,7 @@
 
 
     /* From here starts the logic */
-    let userName = "erik";  // create variable for username
+/*     let userName = "erik";  // create variable for username
 
     userName ? console.log(`Hello, ${userName} !`)  // Greeting for username 
     : console.log("Hello!");
@@ -52,8 +52,43 @@
     break;
     }
 
-    console.log(eightBall);   // logs the value of eightBall. It will be a new answer everytime. 
+    console.log(eightBall); */   // logs the value of eightBall. It will be a new answer everytime. 
 
 
+
+
+
+// improved version
+
+
+function playGame (question) {
+    if (typeof question != "string") {
+        return "Invalid question";
+    } else if (question) {
+        console.log(question);
+    }
+    let randomNumber = Math.floor(Math.random() * 6);
+    let answer = ""; 
+    switch (randomNumber) {
+        case 1: 
+        answer = "Definetily"; 
+        break; 
+        case 2: 
+        answer = "Not sure";
+        break; 
+        case 3: 
+        answer = "Yes man";
+        break; 
+        case 4: 
+        answer = "Not today";
+        break; 
+        case 5: 
+        answer = "why not";
+        break; 
+    }
+    return answer;
+}
+
+console.log(playGame("will be rich"));
 
 
