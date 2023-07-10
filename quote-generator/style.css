@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(218, 144, 144);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+body h1 {
+  background-color: rgb(14, 14, 14);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 1px solid white;
+}
+body .quote-container {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+}
+body .quote-container .quote {
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 30px;
+}
+body .quote-container .author {
+  color: rgb(167, 35, 35);
+}
+body .quote-container #btn {
+  background-color: black;
+  color: wheat;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
