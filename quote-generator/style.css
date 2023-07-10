@@ -4,7 +4,9 @@
 
 body {
   margin: 0;
-  background-color: rgb(218, 144, 144);
+  background-image: url(./aaron-burden-QJDzYT_K8Xg-unsplash\ \(1\).jpg);
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,13 +29,14 @@ body .quote-container {
   border-radius: 20px;
   box-shadow: 1px 1px 5px black;
 }
-body .quote-container .quote {
+body .quote-container #quote {
   font-size: 16px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   line-height: 30px;
 }
-body .quote-container .author {
+body .quote-container #author {
   color: rgb(167, 35, 35);
+  text-transform: uppercase;
 }
 body .quote-container #btn {
   background-color: black;
