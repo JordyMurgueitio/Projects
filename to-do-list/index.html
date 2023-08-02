@@ -11,7 +11,7 @@
     <header>
         <h1>Task List</h1>
         <form id="new-task-form">
-            <input type="text" name="new-task-name" id="new-task-name" placeholder="What did you plan for today?">
+            <input type="text" id="new-task-input" placeholder="What did you plan for today?">
             <input type="submit" id="new-task-submit" value="Add task">
         </form>
     </header>
@@ -19,6 +19,16 @@
     <main>
         <section class="task-list">
             <h2>Tasks</h2>
+
+            <div class="task">
+                <div class="content">
+                    <input type="text" class="text" value="My task" readonly>
+                </div>
+                <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
         </section>
     </main>
 
