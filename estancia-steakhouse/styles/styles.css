@@ -427,7 +427,7 @@ footer {
 /* Gallery Page Styles */
 /* gallery hero mobile */
 .gallery-hero-section {
-    background-image: url(../assets/gallery-hero.jpg);
+    background-image: url(../assets/herogallery.jpg);
 }
 .gallery-hero-slogan {
     color: rgb(255, 255, 255);
@@ -470,13 +470,9 @@ footer {
     color: rgb(255, 255, 255);
 }
 /* butcher's selection nav mobile */
-.butcher-navbar-container {
-    position: absolute;
-}
 .butcher-navbar {
     width: 100%;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    background-color: rgba(30, 34, 33, 0.142);
+    background-color: rgba(0, 0, 0, 0.142);
 }
 .butcher-links-container { 
     display: flex;
@@ -511,10 +507,13 @@ footer {
 }
 /* butcher whole cuts section mobile */
 .butcher-section {
-    padding: 50px 0 30px 0; ;
+    padding: 50px 0 30px 0; 
+    background-color: rgb(255, 255, 255);
+    color: #000000;
 }
 #wines {
     padding-bottom: 60px;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 .butcher-section-title {
     text-align: center;
@@ -536,25 +535,31 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
     gap: 50px;
 }
 .butcher-product-item {
     flex: 1 1 250px;
     max-width: 300px;
+    padding-bottom: 20px;
 }
 .product-image {
     width: 100%;
     height: auto;
+    margin-bottom: 5px;;
 }
 .product-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 0;
 }
 .product-price {
     font-size: 1.5rem;
     margin-bottom: 10px;
+}
+.product-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 .product-button {
     text-decoration: none;
@@ -580,7 +585,7 @@ footer {
     margin-bottom: 50px;
     }
     .product-title {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     }
     .product-price {
         font-size: 1.6rem;
