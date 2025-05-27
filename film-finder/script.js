@@ -2,6 +2,7 @@ const tmdbKey = '7b93558b5c9ad1cacc5793ddef3050ca';
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
+
 const getGenres = async () => {
     const genreRequestEndpoint = '/genre/movie/list';
     const requestParams = `?api_key=${tmdbKey}`;

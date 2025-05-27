@@ -24,7 +24,7 @@
             <label>Choose a genre:</label>
             <select name="genres" id="genres"></select>
         </form>
-        <button id="playBtn">Let's Play!</button>
+        <button id="playBtn">Find Movie</button>
         
         <div id="movieInfo">
             <div id="moviePoster"></div>
@@ -32,8 +32,13 @@
         </div>
 
         <div id="likeOrDislikeBtns" hidden>
-            <button id="likeBtn"><i class="fa-regular fa-thumbs-up"></i></i></button>
+            <button id="likeBtn"><i class="fa-regular fa-thumbs-up"></i></button>
             <button id="dislikeBtn"><i class="fa-regular fa-thumbs-down"></i></button>
         </div>
+
+        <section class="liked-movies-section" id="likedMoviesSection" hidden>
+            <h2 class="liked-movies-title">🎥 Liked Movies</h2>
+            <div id="likedMoviesContainer"></div>
+        </section>
     </body>
 </html>

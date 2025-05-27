@@ -29,11 +29,30 @@ const clearCurrentMovie = () => {
     movieTextDiv.innerHTML = '';
 }
 
+// display the liked movies on the page
+const likedMovies = [];
+let currentMovie = null;
+const renderLikedMovies = () => {   
+    // clean the container
+    const likedMoviesContainer = document.getElementById('likedMoviesContainer');
+    likedMoviesContainer.innerHTML = '';
+    // Loop through liked movies and create cards for each
+    likedMovies.forEach(movie => {
+        const likedMovieCard = createLikedMovieCard(movie);
+        likedMoviesContainer.appendChild(likedMovieCard);
+    });
+    // Show the liked movies container
+    document.getElementById('likedMoviesSection').removeAttribute('hidden');
+}
+
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
-    clearCurrentMovie();
-    showRandomMovie();
+    likedMovies.push(currentMovie);     // 1. Save current movie
+    renderLikedMovies();                // 2. Show liked list
+    clearCurrentMovie();                // 3. Clear old content
+    showRandomMovie();  
 };
+
 
 // After disliking a movie, clears the current movie from the screen and gets another random movie
 const dislikeMovie = () => {
@@ -86,6 +105,16 @@ const createMovieRating = (rating) => {
     ratingParagraph.innerHTML = `<strong>Rating:</strong> ${rating} / 10`;
     return ratingParagraph;
 };
+// create HTML for liked movies cards
+const createLikedMovieCard = (movie) => {
+    const likedMovieCard = document.createElement('div');
+    likedMovieCard.classList.add('liked-movie-card');
+    const cardImg = createMoviePoster(movie.poster_path);
+    const cardTitle = createMovieTitle(movie.title);
+    const cardRating = createMovieRating(movie.vote_average);
+    likedMovieCard.append(cardImg, cardTitle, cardRating);
+    return likedMovieCard;
+}
 
 
 
@@ -122,4 +151,8 @@ const displayMovie = async (movieInfo) => {
     showBtns();
     likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
+    currentMovie = movieInfo; 
 };
+
+
+
