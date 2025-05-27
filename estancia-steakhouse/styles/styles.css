@@ -424,43 +424,6 @@ footer {
 
 
 
-/* Gallery Page Styles */
-/* gallery hero mobile */
-.gallery-hero-section {
-    background-image: url(../assets/herogallery.jpg);
-}
-.gallery-hero-slogan {
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-}
-/* gallery section */
-.gallery-section {
-    background-color: rgb(4, 4, 4);
-    padding: 50px 0;
-}
-.gallery-container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 30px;
-}
-.gallery-image {
-    flex: 1 1 400px ;
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-}
-/* crafted to perfection section */
-.crafted {
-    background-image: url(../assets/white-meat.jpg);
-}
-
-
-
-
 /* Butcher's selection page styles */
 /* butcher hero section */
 .butcher-hero-section {
@@ -727,3 +690,88 @@ footer {
     }
 }
 
+
+
+/* Reservations page styles */
+/* hero reservations page mobile */
+.reservations-hero-section {
+    background-image: url(../assets/reservations.jpg);
+}
+.hero-title-reservations {
+    color: rgba(0, 0, 0, 0.756);
+}
+.reservations-hero-slogan {
+    color: rgb(255, 255, 255);
+}
+/* reservations section mobile */
+.reservations-main{
+    background-color: rgb(0, 0, 0);
+    background-image: url(../assets/reservations.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 10px 0 70px 0;
+}
+.reservations-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+.reservations-form {
+    background-color: rgba(39, 34, 34, 0.52);
+    padding: 30px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.reservations-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+.reservations-form input, .reservations-form select, .reservations-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.reservations-form p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+form input[type="radio"],
+form input[type="radio"] + label {
+    display: inline-block;
+    width: auto;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+.reservations-form button {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.reservations-form button:hover {
+    background-color: rgb(84, 26, 26);
+}
+/* reservations section desktop */
+@media screen and (min-width: 600px) {
+    .reservations-main{
+    padding: 0 0 150px 0;
+    }
+    .reservations-title {
+        font-size: 4rem;
+    }
+}

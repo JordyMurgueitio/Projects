@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to fontawesome -->
+    <script src="https://kit.fontawesome.com/25ee437153.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Link to google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Parisienne&display=swap" rel="stylesheet">
+    <!-- Title -->
+    <title>Reservations</title>
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="reservations-hero-section hero-section">
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a class="link-text" href="../index.html">Home</a></li>
+                <li class="link-item"><a class="link-text" href="./butchers.html">Butcher's Selection</a></li>
+                <li class="link-item"><a class="link-text" href="./courses.html">Courses</a></li>
+                <li class="link-item"><a class="link-text" href="#">Reservations</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 class="hero-title hero-title-reservations">Your Table Awaits</h1>
+            <p class="hero-slogan reservations-hero-slogan">Reserve a moment of culinary excellence</p>
+        </div>
+    </header>
+    <!-- Header section end -->
+    <main class="reservations-main">
+        <h2 class="reservations-title section-title">Reservations</h2>
+        <form class="reservations-form">
+            <label id="name-label" for="name">Name</label>
+            <input id="name" type="text" placeholder="Enter your name" required>
+
+            <label id="email-label" for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
+
+            <label id="number-label" for="age">Age</label>
+            <input id="number" type="number" min="18" max="110" placeholder="age" required>
+
+            <label for="dropdown">Persons</label>
+            <select name="dropdown" id="dropdown">
+                <option value="">Select an option</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <p>Location</p>
+            <label for="ba">
+                <input id="ba" type="radio" name="radio">Buenos Aires
+            </label>
+            <label for="quito">
+                <input id="quito" type="radio" name="radio">Quito
+            </label>
+            <label for="ny">
+                <input id="ny" type="radio" name="radio">New York
+            </label>
+            
+
+            <label for="comments">Any comments or suggestions?</label>
+            <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Enter your comments here..."></textarea>
+
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="contact-us-block">
+                <h3 class="footer-subtitle">Contact us</h3>
+                <p class="paragraph"><span><i class="fa-solid fa-phone"></i></span>+593 356 5039 / +54 9 116273567</p>
+                <p class="paragraph"><span><i class="fa-solid fa-envelope"></i></span>estanciaSteakhouse@gmail.com</p>
+            </div>
+            <div class="find-us-block">
+                <h3 class="footer-subtitle">Find us</h3>
+                <p><strong>Quito: </strong>Av. Naciones Unidas y 6 de Diciembre</p>
+                <p><strong>Buenos Aires: </strong>Libertador 2500</p>
+                <p><strong>New York: </strong>Lincoln Street 345</p>
+            </div>
+            <div class="follow-us-block">
+                <h3 class="footer-subtitle">Follow us</h3>
+                <a class="icon-link" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="icon-link" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                <a class="icon-link" href="https://x.com/"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="logo-block">
+                <img src="../assets/logo-white.png" alt="logo">
+            </div> 
+        </div>
+    </footer>
+</body>
+</html>
