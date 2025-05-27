@@ -53,6 +53,22 @@ const getMovieInfo = async movie => {
     };
 };
 
+const getMovieCast = async movie => {
+    const movieId = movie.id;
+    const movieCastEndpoint = `/movie/${movieId}/credits`;
+    const requestParams = `?api_key=${tmdbKey}`;
+    const urlToFetch = `${tmdbBaseUrl}${movieCastEndpoint}${requestParams}`;
+    try {
+        const response = await fetch(urlToFetch);
+        if (response.ok) {
+            const movieCast = await response.json();
+            return movieCast;
+        }
+    } catch (error) {
+        console.log(error);
+    };
+};
+
 // Gets a list of movies and ultimately displays the info of a random movie from the list
 const showRandomMovie = async () => {
     const movieInfo = document.getElementById('movieInfo');

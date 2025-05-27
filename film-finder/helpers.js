@@ -65,6 +65,29 @@ const createMovieOverview = (overview) => {
     overviewParagraph.innerHTML = overview;
     return overviewParagraph;
 };
+// Create HTML for movie release date
+const createMovieReleaseDate = (releaseDate) => {
+    const dateParagraph = document.createElement('p');
+    dateParagraph.setAttribute('id', 'movieReleaseDate');
+    dateParagraph.innerHTML = releaseDate;
+    return dateParagraph;
+};
+// Create HTML for movie cast
+const createMovieCast = (cast) => {
+    const castParagraph = document.createElement('p');
+    castParagraph.setAttribute('id', 'movieCast');
+    castParagraph.innerHTML = cast;
+    return castParagraph;
+};
+// Create HTML for movie rating
+const createMovieRating = (rating) => {
+    const ratingParagraph = document.createElement('p');
+    ratingParagraph.setAttribute('id', 'movieRating');
+    ratingParagraph.innerHTML = `<strong>Rating:</strong> ${rating} / 10`;
+    return ratingParagraph;
+};
+
+
 
 // Returns a random movie from the first page of movies
 const getRandomMovie = (movies) => {
@@ -73,8 +96,9 @@ const getRandomMovie = (movies) => {
     return randomMovie;
 };
 
+
 // Uses the DOM to create HTML to display the movie
-const displayMovie = (movieInfo) => {
+const displayMovie = async (movieInfo) => {
     const moviePosterDiv = document.getElementById('moviePoster');
     const movieTextDiv = document.getElementById('movieText');
     const likeBtn = document.getElementById('likeBtn');
@@ -83,10 +107,18 @@ const displayMovie = (movieInfo) => {
     const moviePoster = createMoviePoster(movieInfo.poster_path);
     const titleHeader = createMovieTitle(movieInfo.title);
     const overviewText = createMovieOverview(movieInfo.overview);
+    const releaseDateText = createMovieReleaseDate(movieInfo.release_date);
+    const movieCastData = await getMovieCast(movieInfo);
+    const cast = movieCastData.cast.slice(0, 5).map(actor => actor.name).join(', ');
+    const castText = createMovieCast(`<strong>Cast:</strong> ${cast}`);
+    const movieRating = createMovieRating(movieInfo.vote_average);
     // Append title, poster, and overview to page
     moviePosterDiv.appendChild(moviePoster);
     movieTextDiv.appendChild(titleHeader);
     movieTextDiv.appendChild(overviewText);
+    movieTextDiv.appendChild(releaseDateText);
+    movieTextDiv.appendChild(castText);
+    movieTextDiv.appendChild(movieRating);
     showBtns();
     likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
