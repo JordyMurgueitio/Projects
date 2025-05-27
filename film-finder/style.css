@@ -90,7 +90,7 @@ img#moviePoster {
     margin-bottom: 30px;;
 }
 #movieOverview, #movieReleaseDate, #movieCast, #movieRating {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     line-height: 25px;
 }
@@ -142,4 +142,49 @@ img#moviePoster {
     #movieText {
         width: 55%;
     }
+}
+
+
+/* Liked movies section mobile */
+#likedMoviesSection {
+    background-color: #249e57;
+    background-image: url(./film-finder.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    padding: 50px 0;
+}
+.liked-movies-title {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+#likedMoviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.liked-movie-card {
+    background-color: #3e3c3c90;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1 1 200px;         /* shrink/grow with a base width */
+    max-width: 200px;
+}
+.liked-movie-poster {
+    width: 100%;
+    border-radius: 6px;
+}
+.liked-movie-title {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+.liked-movie-rating {
+    font-size: 1.1rem;
+    color: #ffffff;
 }

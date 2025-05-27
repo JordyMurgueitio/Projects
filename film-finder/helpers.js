@@ -61,18 +61,26 @@ const dislikeMovie = () => {
 };
 
 // Create HTML for movie poster
-const createMoviePoster = (posterPath) => {
+const createMoviePoster = (posterPath, useId = true) => {
     const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
     const posterImg = document.createElement('img');
     posterImg.setAttribute('src', moviePosterUrl);
-    posterImg.setAttribute('id', 'moviePoster');
+    if (useId) {
+        posterImg.setAttribute('id', 'moviePoster');
+    } else {
+        posterImg.classList.add('liked-movie-poster'); // for styling
+    }
     return posterImg;
 };
 
 // Create HTML for movie title
-const createMovieTitle = (title) => {
+const createMovieTitle = (title, useId = true) => {
     const titleHeader = document.createElement('h1');
-    titleHeader.setAttribute('id', 'movieTitle');
+    if (useId) {
+        titleHeader.setAttribute('id', 'movieTitle');
+    } else {
+        titleHeader.classList.add('liked-movie-title');
+    }
     titleHeader.innerHTML = title;
     return titleHeader;
 };
@@ -99,9 +107,13 @@ const createMovieCast = (cast) => {
     return castParagraph;
 };
 // Create HTML for movie rating
-const createMovieRating = (rating) => {
+const createMovieRating = (rating, useId = true) => {
     const ratingParagraph = document.createElement('p');
-    ratingParagraph.setAttribute('id', 'movieRating');
+    if (useId) {
+        ratingParagraph.setAttribute('id', 'movieRating');
+    } else {
+        ratingParagraph.classList.add('liked-movie-rating');
+    }
     ratingParagraph.innerHTML = `<strong>Rating:</strong> ${rating} / 10`;
     return ratingParagraph;
 };
@@ -109,9 +121,9 @@ const createMovieRating = (rating) => {
 const createLikedMovieCard = (movie) => {
     const likedMovieCard = document.createElement('div');
     likedMovieCard.classList.add('liked-movie-card');
-    const cardImg = createMoviePoster(movie.poster_path);
-    const cardTitle = createMovieTitle(movie.title);
-    const cardRating = createMovieRating(movie.vote_average);
+    const cardImg = createMoviePoster(movie.poster_path, false);
+    const cardTitle = createMovieTitle(movie.title, false);
+    const cardRating = createMovieRating(movie.vote_average, false);
     likedMovieCard.append(cardImg, cardTitle, cardRating);
     return likedMovieCard;
 }
