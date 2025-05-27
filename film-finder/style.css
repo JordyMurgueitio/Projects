@@ -1,76 +1,98 @@
-body {
-    background-color: #7f0920;
-    color: #0a0408;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    background-color: #093a52;
+    background-image: url(./film-finder.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.app-header {
+    padding: 40px 0 10px 0;
+    margin-bottom: 10px;
+}
 #appTitle {
     text-align: center;
-    margin: 0px auto;
-    display: block;
     font-family: 'Staatliches', sans-serif;
-    font-size: 80px;
+    font-size: 4rem;
+    color: #FEFBEA;
 }
-
-#genreForm, #playBtn {
+#genreForm{
     text-align: center;
-    margin: 0px auto;
-    display: block;
+    width: 80%;
+    margin: 0px auto 20px auto;
     font-family: 'Fredoka One', sans-serif;
+    padding: 50px 10px;
+}
+#genreForm label {
+    font-size: 2.5rem;
+    color: #e3dfd6;
+    display: block;
+    margin-bottom: 30px;
+}
+#genres {
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #948a8a 2px solid;
+    text-align: center;
+    font-size: 1.2rem;
+}
+#playBtn {
+    margin: 0px auto;
+    background-color: #000000;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    color: #ac5656;
+    font-family: 'Questrial', sans-serif;
+    font-size: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+#playBtn:hover {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 #movieInfo {
-    width:  65%;
-    margin:  32px auto;
+    width:  80%;
+    background-color: #000000b3;
+    margin:  32px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
 }
-
-#movieInfo:after {
-    content:  "";
-    display:  table;
-    clear:  both;
+#moviePoster {
+    width:  80%;
+    max-width: 300px;
+    min-width: 250px;
 }
-
-#moviePoster, #movieText {
-    width:  50%;
-    float:  left;
-}
-
 img#moviePoster {
     width:  100%;
     height:  auto;
-    display:  block;
-    margin:  auto;
 }
-
 #movieText {
+    width:  80%;
     font-family: 'Questrial';
     color: #FEFBEA;
-    line-height: 1.25;
 }
-
-#movieTitle, #movieOverview {
-    padding:  32px;
+#movieTitle {
+    font-size: 2.5rem;
+    margin-bottom: 30px;;
 }
-
-#playBtn {
-    margin-top: 20px;
-    font-size: 25px;
-    padding: 7px 10px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: #B97828;
-    color: #fdc238;
-    cursor:  pointer;
-}
-
-label {
-    display: block;
-    font-size: 35px;
-    margin-bottom: 5px;
-}
-
-select {
-    width: 200px;
-    height: auto;
+#movieOverview, #movieReleaseDate, #movieCast, #movieRating {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 25px;
 }
 
 #likeOrDislikeBtns {
@@ -80,10 +102,11 @@ select {
 
 #likeBtn, #dislikeBtn {
     padding: 15px 25px;
-    font-size: 25px;
+    font-size: 2rem;
     border-radius: 12px;
     border-style: none;
     cursor:  pointer;
+    margin: 20px 10px;
 }
 
 #likeBtn {
@@ -94,4 +117,29 @@ select {
 #dislikeBtn {
     background-color: #c74a4a;
     color: #910000;
+}
+
+/* desktop */
+@media screen and (min-width: 900px) {
+    #genreForm {
+        width: 50%;
+    }
+    #genreForm label {
+        font-size: 2.7rem;
+        margin-bottom: 30px;
+    }
+    #genres {
+        font-size: 1.4rem;
+    }
+    #movieInfo {
+        width: 70%;
+        gap: 40px;
+        margin: 40px auto 10px auto;
+    }
+    #moviePoster {
+        width: 30%;
+    }
+    #movieText {
+        width: 55%;
+    }
 }
