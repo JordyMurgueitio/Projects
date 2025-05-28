@@ -1,3 +1,7 @@
+let likedVisible = false; // track toggle state
+const showLikedBtn = document.getElementById('showLikedBtn');
+const likedMoviesSection = document.getElementById('likedMoviesSection');
+
 // Populate dropdown menu with all the available genres
 const populateGenreDropdown = (genres) => {
     const select = document.getElementById('genres')
@@ -30,7 +34,7 @@ const clearCurrentMovie = () => {
 }
 
 // display the liked movies on the page
-const likedMovies = [];
+const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || [];
 let currentMovie = null;
 const renderLikedMovies = () => {   
     // clean the container
@@ -43,16 +47,28 @@ const renderLikedMovies = () => {
     });
     // Show the liked movies container
     document.getElementById('likedMoviesSection').removeAttribute('hidden');
-}
+};
+showLikedBtn.onclick = () => {
+    likedVisible = !likedVisible;
+    if (likedVisible) {
+        renderLikedMovies();
+        likedMoviesSection.removeAttribute('hidden');
+        showLikedBtn.textContent = "Hide Liked Movies";
+    } else {
+        likedMoviesSection.setAttribute('hidden', true);
+        showLikedBtn.textContent = "Show Liked Movies";
+    };
+};
 
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
-    likedMovies.push(currentMovie);     // 1. Save current movie
-    renderLikedMovies();                // 2. Show liked list
-    clearCurrentMovie();                // 3. Clear old content
+    if (!likedMovies.some(movie => movie.id === currentMovie.id)) {
+    likedMovies.push(currentMovie);     
+    localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
+    }
+    clearCurrentMovie();                
     showRandomMovie();  
 };
-
 
 // After disliking a movie, clears the current movie from the screen and gets another random movie
 const dislikeMovie = () => {

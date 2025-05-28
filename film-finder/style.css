@@ -41,8 +41,15 @@ body {
     text-align: center;
     font-size: 1.2rem;
 }
-#playBtn {
-    margin: 0px auto;
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+#playBtn, #showLikedBtn {
     background-color: #000000;
     border-radius: 10px;
     border: 2px solid #ffffff;
@@ -52,10 +59,9 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     text-align: center;
-    display: block;
     transition: 0.3s ease-in-out;
 }
-#playBtn:hover {
+#playBtn:hover, #showLikedBtn:hover {
     background-color: #ffffff;
     color: #000000;
 }
@@ -110,13 +116,20 @@ img#moviePoster {
 }
 
 #likeBtn {
-    background-color: #249e57;
+    background-color: #000000;
+    border: 1px solid white;
     color: darkgreen;
 }
-
+#likeBtn:hover {
+    background-color: #249e57;
+}
 #dislikeBtn {
-    background-color: #c74a4a;
+    background-color: #000000;
+    border: 1px solid white;
     color: #910000;
+}
+#dislikeBtn:hover {
+    background-color:#ac5656;
 }
 
 /* desktop */
