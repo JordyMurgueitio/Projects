@@ -1,7 +1,3 @@
-let likedVisible = false; // track toggle state
-const showLikedBtn = document.getElementById('showLikedBtn');
-const likedMoviesSection = document.getElementById('likedMoviesSection');
-
 // Populate dropdown menu with all the available genres
 const populateGenreDropdown = (genres) => {
     const select = document.getElementById('genres')
@@ -34,8 +30,12 @@ const clearCurrentMovie = () => {
 }
 
 // display the liked movies on the page
+let likedVisible = false; // track toggle state
+const showLikedBtn = document.getElementById('showLikedBtn');
+const likedMoviesSection = document.getElementById('likedMoviesSection');
 const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || [];
 let currentMovie = null;
+
 const renderLikedMovies = () => {   
     // clean the container
     const likedMoviesContainer = document.getElementById('likedMoviesContainer');
@@ -66,6 +66,7 @@ const likeMovie = () => {
     likedMovies.push(currentMovie);     
     localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
     }
+    renderLikedMovies();
     clearCurrentMovie();                
     showRandomMovie();  
 };
@@ -140,10 +141,23 @@ const createLikedMovieCard = (movie) => {
     const cardImg = createMoviePoster(movie.poster_path, false);
     const cardTitle = createMovieTitle(movie.title, false);
     const cardRating = createMovieRating(movie.vote_average, false);
-    likedMovieCard.append(cardImg, cardTitle, cardRating);
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add('remove-btn');
+    removeBtn.onclick = () => {
+        removeLikedMovie(movie.id);
+        renderLikedMovies();
+    };
+    likedMovieCard.append(cardImg, cardTitle, cardRating, removeBtn);
     return likedMovieCard;
+};
+const removeLikedMovie = movieId => {
+    const index = likedMovies.findIndex(movie => movie.id === movieId);
+    if (index !== -1) {
+        likedMovies.splice(index, 1);
+        localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
+    }
 }
-
 
 
 // Returns a random movie from the first page of movies
