@@ -20,18 +20,18 @@ const getGenres = async () => {
     };
 };
 
-const getMovies = async () => {
+const getMovies = async (page = 1) => {
     const selectedGenre = getSelectedGenre();
     const discoverMovieEndpoint = `/discover/movie`;
-    const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}`;
+    const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}&page=${page}`;
     const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;
     try {
         const response = await fetch(urlToFetch);
         if (response.ok) {
-        const jsonResponse = await response.json();
-        const movies = jsonResponse.results;
-        console.log(movies);
-        return movies;
+            const jsonResponse = await response.json();
+            const movies = jsonResponse.results;
+            const totalPages = jsonResponse.total_pages;
+            return {movies, totalPages};
         };
     } catch (error) {
         console.log(error);
@@ -76,7 +76,14 @@ const showRandomMovie = async () => {
     if (movieInfo.childNodes.length > 0) {
         clearCurrentMovie();
     };
-    const movies = await getMovies();
+    // Step 1: Get total number of pages
+    const { totalPages } = await getMovies(1);
+    const maxPages = Math.min(totalPages, 500); 
+    // Step 2: Pick a random page number
+    const randomPage = Math.floor(Math.random() * maxPages) + 1;
+    // Step 3: Get movies from that page
+    const { movies } = await getMovies(randomPage);
+    // Step 4: Pick a random movie from the list
     const randomMovie = getRandomMovie(movies);
     const info = await getMovieInfo(randomMovie);
     displayMovie(info);

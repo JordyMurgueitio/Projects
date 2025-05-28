@@ -63,10 +63,12 @@ showLikedBtn.onclick = () => {
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
     if (!likedMovies.some(movie => movie.id === currentMovie.id)) {
-    likedMovies.push(currentMovie);     
-    localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
+        likedMovies.push(currentMovie);     
+        localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
     }
-    renderLikedMovies();
+    if (likedVisible) {
+        renderLikedMovies();
+    }
     clearCurrentMovie();                
     showRandomMovie();  
 };
